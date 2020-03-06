@@ -1,0 +1,48 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ .Values.appName }}
+  name: influxdb-{{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.appName }}
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.appName }}
+    spec:
+      containers:
+      - env:
+        - name: INFLUXDB_DB
+          value: {{ .Values.global.db.dbName }}
+        - name: INFLUXDB_ADMIN_USER
+          value: {{ .Values.global.db.adminUser }}
+        - name: INFLUXDB_ADMIN_PASSWORD
+          value: {{ .Values.global.db.adminUserPassword }}
+        - name: INFLUXDB_READ_USER
+          value: {{ .Values.global.db.readUser }}
+        - name: INFLUXDB_READ_USER_PASSWORD
+          value: {{ .Values.global.db.readUserPassword }}
+        - name: INFLUXDB_WRITE_USER
+          value: {{ .Values.global.db.writeUser }}
+        - name: INFLUXDB_WRITE_USER_PASSWORD
+          value: {{ .Values.global.db.writeUserPassword }}
+        image: {{ .Values.image.repository }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        name: {{ .Values.appName }}
+        ports:
+        - containerPort: 8086
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /var/lib/influxdb
+          name: influxdb-volume-1
+      volumes:
+      - name: influxdb-volume-1
+        persistentVolumeClaim:
+          claimName: pvc-influxdb

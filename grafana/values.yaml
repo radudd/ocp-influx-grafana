@@ -1,0 +1,22 @@
+
+# Grafana will be deployed using the operator
+appName: grafana
+dsName: datasource
+dashboardName: dashboard
+service:
+  port: 3000
+ingress:
+  host: <url>
+adminUser: admin
+adminPassword: password
+
+global:
+  db:
+    dbName: temperature
+    adminUser: admin
+    adminUserPassword: password
+    readUser: grafana
+    readUserPassword: password
+    writeUser: pi
+    writeUserPassword: password
+    url: http://influxdb:8086

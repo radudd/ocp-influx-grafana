@@ -145,7 +145,7 @@ spec:
               ],
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "select temperature from \"{{ .Values.global.db.dbName }}\"",
+              "query": "select temperature from \"Baby Room\" where time > now() - 1m limit 1",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -259,7 +259,7 @@ spec:
               ],
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "select humidity from \"{{ .Values.global.db.dbName }}\"",
+              "query": "select humidity from \"Baby Room\" where time > now() - 1m limit 1",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -304,7 +304,7 @@ spec:
         "list": []
       },
       "time": {
-        "from": "now-6h",
+        "from": "now-5m",
         "to": "now"
       },
       "timepicker": {
@@ -312,7 +312,7 @@ spec:
         "time_options": []
       },
       "timezone": "browser",
-      "title": "{{ .Values.dashboardName }}",
+      "title": "Baby Room current",
       "uid": "L8NGNtwWk",
       "version": 1
     }

@@ -4,15 +4,12 @@ before_install:
 addons:
   apt:
     update: true
-install:
-- curl -O https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/oc/4.3/linux/oc.tar.gz && \ 
-    tar xzvf oc.tar.gz -C /usr/local/bin/ && \ 
-    rm -f oc.tar.gz
+install: ./ci-dependencies.sh
 script:
 - jq validate grafana-dashboard.json
 deploy:
 - provider: script
-  script: "./deploy.sh"
+  script: "./ci-deploy.sh"
   skip_cleanup: true
   on:
     branch: master

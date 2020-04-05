@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/radudd/ocp-influx-grafana.svg?branch=master)](https://travis-ci.org/radudd/ocp-influx-grafana)
+
 ## About
 
 These Helm Charts are used to deploy Grafana with InfluxDB as source in an OpenShift cluster.

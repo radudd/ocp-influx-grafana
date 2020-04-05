@@ -9,7 +9,7 @@ script:
 - jq validate grafana-dashboard.json
 deploy:
 - provider: script
-  script: "./ci-deploy.sh"
+  script: "./ci-deploy.py"
   skip_cleanup: true
   on:
     branch: master

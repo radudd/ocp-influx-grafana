@@ -6,7 +6,7 @@ addons:
     update: true
 install: ./ci-dependencies.sh
 script:
-- jq validate grafana-dashboard.json
+- cat grafana-dashboard.json | jq .
 deploy:
 - provider: script
   script: "./ci-deploy.sh"

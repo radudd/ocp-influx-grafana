@@ -1,3 +1,4 @@
+language: python
 sudo: required
 before_install:
 - sudo apt-get install -y tar jq curl 
@@ -8,7 +9,7 @@ script:
 - ./ci-dependencies.sh
 deploy:
 - provider: script
-  script: "./ci-deploy.py"
+  script: "./ci-deploy.sh"
   skip_cleanup: true
   on:
     branch: master

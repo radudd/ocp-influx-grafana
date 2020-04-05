@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 # Generate OCP manifest
 python3 ci-deploy-gen-manifest.py

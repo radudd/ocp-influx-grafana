@@ -6,7 +6,6 @@ addons:
     update: true
 before_script: 
 - ./ci-dependencies.sh
-- cat grafana-dashboard.json | jq .
 deploy:
 - provider: script
   script: "./ci-deploy.sh"

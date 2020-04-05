@@ -4,9 +4,8 @@ before_install:
 addons:
   apt:
     update: true
-install: ./ci-dependencies.sh
-script:
-- jq validate grafana-dashboard.json
+script: 
+- ./ci-dependencies.sh
 deploy:
 - provider: script
   script: "./ci-deploy.py"

@@ -4,7 +4,8 @@ before_install:
 addons:
   apt:
     update: true
-install: ./ci-dependencies.sh
+before_script: 
+- ./ci-dependencies.sh
 script:
 - cat grafana-dashboard.json | jq .
 deploy:

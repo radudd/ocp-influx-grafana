@@ -1,9 +1,9 @@
 sudo: required
 before_script:
 - curl -O https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/oc/4.3/linux/oc.tar.gz && \ 
-    sudo tar xzvf oc.tar.gz -C /usr/local/bin/ && \ 
+    tar xzvf oc.tar.gz -C /usr/local/bin/ && \ 
     rm -f oc.tar.gz
-- sudo apt install -y jq
+- apt install -y jq
 script:
 - jq validate grafana-dashboard.json
 deploy:

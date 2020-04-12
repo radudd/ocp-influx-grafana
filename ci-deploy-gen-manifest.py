@@ -12,7 +12,6 @@ grafana = {
           'name': 'baby-room-current.json',
           'plugins': {
             'name': 'grafana-clock-panel',
-            'version: '1.0.3'
             }
 	  }
 	}

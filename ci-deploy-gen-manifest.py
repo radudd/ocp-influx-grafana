@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 
 import json
+import yaml
 
 grafana = {
-	'apiVersion': 'integreatly.org/v1alpha1', 
-        'kind': 'GrafanaDashboard', 
-        'metadata': {
-	  'name': 'baby-room-current'
+	"apiVersion": "integreatly.org/v1alpha1", 
+        "kind": "GrafanaDashboard", 
+        "metadata": {
+	  "name": "baby-room-current"
 	  }, 
-        'spec': {
-          'name': 'baby-room-current.json',
-          'plugins': {
-            'name': 'grafana-clock-panel',
-            'version: '1.0.3'
+        "spec": {
+          "name": "baby-room-current.json",
+          "plugins": {
+            "name": "grafana-clock-panel",
             },
-	  'json': {}
+	  "json": {}
 	  }
 	}
 

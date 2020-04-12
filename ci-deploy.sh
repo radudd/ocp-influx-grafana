@@ -2,6 +2,7 @@
 set -x
 
 # Generate OCP manifest
+pip3 install requirements.txt 
 python3 ci-deploy-gen-manifest.py
 
 # Decrypt kubeconfig

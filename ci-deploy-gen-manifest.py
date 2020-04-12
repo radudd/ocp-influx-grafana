@@ -13,8 +13,7 @@ grafana = {
           'plugins': {
             'name': 'grafana-clock-panel',
             'version: '1.0.3'
-            },
-	  'json': {}
+            }
 	  }
 	}
 

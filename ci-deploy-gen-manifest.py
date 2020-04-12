@@ -11,9 +11,9 @@ grafana = {
 	  }, 
         "spec": {
           "name": "baby-room-current.json",
-          "plugins": {
+          "plugins": [{
             "name": "grafana-clock-panel",
-            },
+            }],
 	  "json": {}
 	  }
 	}
@@ -21,7 +21,7 @@ grafana = {
 try:
   with open("grafana-dashboard.json", "r") as f:
     grafana_dashboard = json.load(f)
-  grafana["spec"]["json"] = grafana_dashboard
+  grafana["spec"]["json"] = json.dumps(grafana_dashboard)
   print(yaml.safe_dump(grafana))
   with open("grafana.json", "w") as f:
     json.dump(grafana, f)

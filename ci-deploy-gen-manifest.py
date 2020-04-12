@@ -11,7 +11,7 @@ grafana = {
         'spec': {
           'name': 'baby-room-current.json',
           'plugins': {
-            'name': 'grafana-clock-panel',
+            'name': 'grafana-clock-panel'
             }
 	  }
 	}

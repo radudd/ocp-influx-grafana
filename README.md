@@ -25,18 +25,18 @@ This repository contains three Helm charts:
 Customize the `override.yaml` of the parent chart.
 
 ```
-vim grafana-influx/override.yaml
+vim override.yaml
 ```
 
 Then go to the parent chart and build the dependencies
 
 ```
 cd grafana-influx
-helm dependencies build
+helm dep build grafana
 ```
 
 Chart is ready to install now
 
 ```
-helm install grafana-influx . --debug -f override.yaml
+helm install iot grafana --debug -f override.yaml
 ```

@@ -8,5 +8,8 @@ spec:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 5G
+      storage: {{ .Values.storage.size | default "5G" }}
   volumeMode: Filesystem
+{{- if .Values.storage.storageClass }}
+  storageClassName: "{{ .Values.storage.storageClass }}"
+{{- end }}

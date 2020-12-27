@@ -22,20 +22,10 @@ This repository contains three Helm charts:
 
 ## Deploy
 
-First export environment variables for the passwords and URLs for Influx DB and Grafana admin user.
+Customize the `override.yaml` of the parent chart.
 
 ```
-export DB_PASS=
-export DB_ADMIN_PASS=
-export INFLUX_URL=
-export CONSOLE_PASS=
-export GRAFANA_URL=
-```
-
-Then customize the `values.yaml` on the parent chart.
-
-```
-vim grafana-influx/values.yaml
+vim grafana-influx/override.yaml
 ```
 
 Then go to the parent chart and build the dependencies
@@ -48,6 +38,5 @@ helm dependencies build
 Chart is ready to install now
 
 ```
-helm install mychart --debug --dry-run .
-helm install mychart .
+helm install grafana-influx . --debug -f override.yaml
 ```

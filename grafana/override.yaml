@@ -1,0 +1,19 @@
+appName: grafana-iot
+dsName: influx
+dashboardName: babyroom-current
+adminUser: admin
+adminPassword: 
+service:
+  port: 3000
+ingress:
+  host: grafana.apps.ocp.bdmsky.net
+
+influxdb:
+  ingress:
+    host: influxdb.apps.ocp.bdmsky.net
+  storage:
+    storageClass: local-sc
+  db:
+    dbName: temperature
+    adminUser: admin
+    adminUserPassword: 

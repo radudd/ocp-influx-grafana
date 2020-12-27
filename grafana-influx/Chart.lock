@@ -1,9 +1,0 @@
-dependencies:
-- name: influxdb
-  repository: file://../influxdb
-  version: 1.0.0
-- name: grafana
-  repository: file://../grafana
-  version: 1.0.0
-digest: sha256:28d021b5cc55b79899b31ea2acd3702eca488bc74e044c1f8d4c2f96b4d66761
-generated: "2020-03-06T13:35:25.803434+01:00"

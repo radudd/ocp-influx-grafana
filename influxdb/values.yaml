@@ -7,23 +7,21 @@ service:
   port: 8086
   portName: 8086-tcp
 
+storage:
+  storageClass: local-sc
+  size: 5G
+
 podSecurityContext: {}
 securityContext: {}
 resources: {}
 nodeSelector: {}
 tolerations: []
 affinity: {}
-
 ingress:
   host: <url>
 
-global:
-  db:
-    dbName: temperature
-    adminUser: admin
-    adminUserPassword: password
-    readUser: grafana
-    readUserPassword: password
-    writeUser: pi
-    writeUserPassword: password
-    url: http://influxdb:8086
+db:
+  dbName: temperature
+  adminUser: admin
+  adminUserPassword: password
+  url: http://influxdb:8086

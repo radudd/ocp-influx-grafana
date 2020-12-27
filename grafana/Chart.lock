@@ -1,0 +1,6 @@
+dependencies:
+- name: influxdb
+  repository: file://../influxdb
+  version: 1.0.0
+digest: sha256:6d378699fbe25ad51e45ffec4f57888cf2745028bc6fc82281f03ec82ab74478
+generated: "2020-12-27T16:19:43.898223+01:00"

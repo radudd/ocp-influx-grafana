@@ -11,10 +11,10 @@ spec:
     - name: InfluxDB
       type: influxdb
       access: proxy
-      database: {{ .Values.global.db.dbName }}
-      user: {{ .Values.global.db.readUser }}
-      url: {{ .Values.global.db.url }}
+      database: {{ .Values.influxdb.db.dbName }}
+      user: {{ .Values.influxdb.db.adminUser }}
+      url: http://influxdb-{{ .Release.Name }}:8086
       jsonData:
         httpMode: GET
       secureJsonData:
-        password: {{ .Values.global.db.readUserPassword }}
+        password: {{ .Values.influxdb.db.adminUserPassword }}
